@@ -25,6 +25,9 @@ ALLOWED_HOSTS = [
     config('ALLOWED_HOST'),
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    config('ALLOWED_ORIGIN'),
+]
 
 # Application definition
 
@@ -36,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
