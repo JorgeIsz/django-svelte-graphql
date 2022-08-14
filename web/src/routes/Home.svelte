@@ -1,19 +1,8 @@
-<script>
+<script lang="ts">
   import { query } from "svelte-apollo";
-  import { gql } from '@apollo/client/core';
+  import { GET_TASKS } from "../lib/queries"
 
-
-  // 2. Execute the GET_BOOKS GraphQL query using the Apollo client
-  //    -> Returns a svelte store of promises that resolve as values come in
-  const GET_TASKS = gql`
-    query {
-      tasks {
-        id
-        name
-        isDone
-      }
-    }
-  `;
+  
   const tasks = query(GET_TASKS);
 
 </script>
