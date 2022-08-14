@@ -1,6 +1,6 @@
 <script lang="ts">
   import { query } from "svelte-apollo";
-  import { GET_TASKS } from "../lib/queries"
+  import { GET_TASKS } from "@/lib/queries";
 
   
   const tasks = query(GET_TASKS);

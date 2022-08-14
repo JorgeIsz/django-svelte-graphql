@@ -1,9 +1,4 @@
 <script lang="ts">
-  import { Router, Link, Route } from "svelte-routing";
-  import Home from "./routes/Home.svelte";
-  import About from "./routes/About.svelte";
-
-  export let url = "";
   import {
     ApolloClient,
     InMemoryCache,
@@ -11,6 +6,12 @@
   } from "@apollo/client/core";
   import { setContext } from '@apollo/client/link/context';
   import { setClient } from "svelte-apollo";
+  import { Router, Link, Route } from "svelte-routing";
+
+  import Home from "@/routes/Home.svelte";
+  import About from "@/routes/About.svelte";
+
+  export let url = "";
 
   const httpLink = createHttpLink({
     uri: "http://localhost:8000/graphql/",
